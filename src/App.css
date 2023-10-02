@@ -1,0 +1,38 @@
+/* COLOR PALATTE */
+/* 
+PALE BLUE: #a2b6b7
+BLUEISH: #385563
+PING: #b67772
+ROD: #68121b
+ORANGE: #8e3c0d
+SAGE: #bdcaae
+DORK GREEN: #2d4e47
+PLUM: #500433
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Allura&family=Amatic+SC:wght@700&family=Great+Vibes&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  max-width: 100vw;
+  width: 100vw;
+  text-align: center;
+  background-image: url(/assets/fallbg1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  
+}
+
+main {
+  width: 80%;
+  height: 100vh;
+  min-height: 100vh;
+  margin: 0 auto;
+  border: 1px solid grey;
+  background-color: rgba(219, 219, 219, 0.92);
+}
