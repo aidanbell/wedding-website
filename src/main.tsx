@@ -9,9 +9,11 @@ import './index.css'
 
 const router = createBrowserRouter([
   { path: "/", id: "home", element: <App />, children: [
-    { path: "/RSVP", id: "RSVP", element: <App /> },
+    { path: "/rsvp", id: "RSVP", element: <App /> },
+    { path: "/lodging", id: "Lodging", element: <App />},
+    { path: "/travel", id: "Travel", element: <App />},
     { path: "/registry", id: "registry", element: <App /> },
-    { path: "/FAQs", id: "FAQs", element: <App /> },
+    { path: "/faqs", id: "FAQs", element: <App /> },
     { path: "/photos", id: "photos", element: <App /> },
     { path: "/contact", id: "contact", element: <App /> },
   ]},

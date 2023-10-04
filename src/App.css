@@ -1,14 +1,15 @@
-/* COLOR PALATTE */
-/* 
-PALE BLUE: #a2b6b7
-BLUEISH: #385563
-PING: #b67772
-ROD: #68121b
-ORANGE: #8e3c0d
-SAGE: #bdcaae
-DORK GREEN: #2d4e47
-PLUM: #500433
-*/
+
+/* color vars */
+:root {
+  --pale-blue: #a2b6b7;
+  --blueish: #385563;
+  --pink: #b67772;
+  --red: #68121b;
+  --orange: #8e3c0d;
+  --sage: #bdcaae;
+  --dork-green: #2d4e47;
+  --plum: #500433;
+}
 
 @import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Allura&family=Amatic+SC:wght@700&family=Great+Vibes&display=swap');
 
@@ -25,7 +26,6 @@ PLUM: #500433
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-  
 }
 
 main {

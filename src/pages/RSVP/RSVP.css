@@ -1,0 +1,26 @@
+.rsvp-form {
+  display: grid;
+  grid-template-areas: 
+    "name"
+    "email"
+    "attending"
+    "submit";
+}
+
+.rsvp-form label {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0.5em 0;
+}
+
+.rsvp-form input {
+  font-size: 1.2rem;
+  padding: 0.5em;
+  border-radius: 5px;
+  border: 1px solid var(--blueish);
+}
+
+.rsvp-form input:focus {
+  outline: none;
+  border: 1px solid var(--pink);
+}
