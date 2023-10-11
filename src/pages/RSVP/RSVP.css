@@ -1,26 +1,116 @@
+input[type="text"],
+input[type="email"],
+textarea {
+  all: unset;
+  border: none;
+  text-align: left;
+}
+
 .rsvp-form {
+  margin: 1em;
   display: grid;
+  max-width: 100%;
+  grid-template-columns: 30% auto;
   grid-template-areas: 
-    "name"
-    "email"
-    "attending"
-    "submit";
+    "name-label name"
+    "email-label email"
+    "attending-label attending"
+    "food-label food"
+    "dietary-label dietary"
+    "accessibility-label accessibility"
+    "message-label message"
+    "submit submit";
+}
+
+.small {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.rsvp-form > * {
+  margin: 1em 0;
+}
+
+.rsvp-form div.name {
+  grid-area: name;
+}
+
+.rsvp-form label.name {
+  grid-area: name-label;
+}
+
+.rsvp-form input.email {
+  grid-area: email;
+}
+
+.rsvp-form label[for="email"] {
+  grid-area: email-label;
+}
+
+.rsvp-form label[for="names"] {
+  display: flex;
+  flex-direction: row;
+}
+
+.rsvp-form label[for="rsvp"] {
+  grid-area: attending-label;
+}
+
+.rsvp-form div.rsvp {
+  grid-area: attending;
+}
+.main-name,
+.more-names {
+  display: flex;
+  flex-direction: row;
+}
+
+.main-name input,
+.more-names input {
+  flex-grow:2;
+  margin-right: 0.5em;
 }
 
 .rsvp-form label {
   font-size: 1.2rem;
   font-weight: 600;
   margin: 0.5em 0;
+  text-align: left;
 }
 
 .rsvp-form input {
   font-size: 1.2rem;
   padding: 0.5em;
-  border-radius: 5px;
-  border: 1px solid var(--blueish);
+  border-bottom: 2px solid var(--blueish);
 }
 
 .rsvp-form input:focus {
   outline: none;
-  border: 1px solid var(--pink);
+  border-bottom: 2px solid var(--pink);
+
+}
+
+
+
+.rsvp-form input[type="submit"] {
+  grid-area: submit;
+  background-color: var(--blueish);
+  color: var(--pink);
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0.5em;
+  border-radius: 0.5em;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.rsvp-form div.rsvp label,
+.rsvp-form div.rsvp {
+  display: flex;
+  align-items: center;
+}
+
+.rsvp-form input[type="radio" i] {
+  height: 30px;
+  width: 30px;
 }
