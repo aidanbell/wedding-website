@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import Navbar from './components/Navbar/Navbar'
 import RSVP from './pages/RSVP/RSVP'
 import Lodging from './pages/Lodging/Lodging'
@@ -7,7 +6,7 @@ import Hero from './pages/Hero/Hero'
 import Registry from './pages/Registry/Registry'
 import Home from './pages/Home/Home'
 
-import { Route, Routes, useRouteError } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import './App.css'
 import { motion } from 'framer-motion'
 
