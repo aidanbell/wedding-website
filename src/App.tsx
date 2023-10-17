@@ -12,7 +12,6 @@ import './App.css'
 import { motion } from 'framer-motion'
 
 function App() {
-  const [activeTab, setActiveTab] = useState("home")
   return (
     <main>
       <Navbar />
@@ -24,7 +23,7 @@ function App() {
         type: "spring",
       }}>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="*" element={<Home />} />
           <Route path="/rsvp" element={<RSVP />} />
           <Route path="/registry" element={<Registry />} />
           <Route path="/lodging" element={<Lodging />} />
@@ -38,10 +37,10 @@ function App() {
 }
 
 
-function ErrorBoundary() {
-  let error = useRouteError();
-  console.log(error)
-  return <div>O</div>
-}
+// function ErrorBoundary() {
+//   let error = useRouteError();
+//   console.log(error)
+//   return <div>O</div>
+// }
 
 export default App

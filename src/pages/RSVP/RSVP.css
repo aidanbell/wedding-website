@@ -114,3 +114,25 @@ textarea {
   height: 30px;
   width: 30px;
 }
+
+@media (max-width: 768px) {
+  .rsvp-form {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      "name-label"
+      "name"
+      "email-label"
+      "email"
+      "attending-label"
+      "attending"
+      "food-label"
+      "food"
+      "dietary-label"
+      "dietary"
+      "accessibility-label"
+      "accessibility"
+      "message-label"
+      "message"
+      "submit";
+  }
+}

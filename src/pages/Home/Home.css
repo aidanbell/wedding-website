@@ -24,3 +24,21 @@
   border: 1px solid var(--blueish);
   width: 80%;
 }
+
+@media (max-width: 768px) {
+  .home__container {
+    flex-direction: column;
+    margin: 0;
+  }
+
+  .home__image {
+    width: 80%;
+    margin: auto;
+    margin-top: 2em;
+  }
+
+  .home__info {
+    width: 100%;
+    padding: 2em;
+  }
+}

@@ -1,3 +1,5 @@
+import "./Lodging.css"
+
 export default function Lodging() {
   return (
     <div>
