@@ -59,17 +59,27 @@ textarea {
 .rsvp-form div.rsvp {
   grid-area: attending;
 }
-.main-name,
-.more-names {
+.name-row {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
-.main-name input,
-.more-names input {
+.name-row select {
+  padding: 0.5em;
+}
+
+.name-row input {
   flex-grow:2;
   margin-right: 0.5em;
 }
+
+.name-row button {
+  margin-left: 0.5em;
+  border: none;
+  background: none;
+}
+
 
 .rsvp-form label {
   font-size: 1.2rem;
@@ -78,7 +88,8 @@ textarea {
   text-align: left;
 }
 
-.rsvp-form input {
+.rsvp-form input,
+.rsvp-form textarea {
   font-size: 1.2rem;
   padding: 0.5em;
   border-bottom: 2px solid var(--blueish);
@@ -90,7 +101,12 @@ textarea {
 
 }
 
-
+.icon {
+  display: block;
+  height: 3rem;
+  width: 3rem;
+  margin-right: 0.5em;
+}
 
 .rsvp-form input[type="submit"] {
   grid-area: submit;

@@ -27,12 +27,11 @@ export default function Navbar() {
           opacity: [0, 1],
           y: [-100, 0],
         }}>
+        <NavLink to="/">Home</NavLink>
         <NavLink to="/rsvp">RSVP</NavLink>
         <NavLink to="/registry">Registry</NavLink>
         <NavLink to="/lodging">Lodging</NavLink>
         <NavLink to="/faqs">FAQs</NavLink>
-        <NavLink to="/photos">Photos</NavLink>
-        <NavLink to="/contact">Contact</NavLink>
       </motion.div>
     </nav>
   );
