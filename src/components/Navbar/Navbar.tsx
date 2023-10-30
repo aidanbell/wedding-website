@@ -4,8 +4,8 @@ import {NavLink, Link} from "react-router-dom";
 import "./Navbar.css"
 
 export default function Navbar() {
-  function disable(e) {
-    e.preventDefault();
+  function disable(event: any) {
+    event.preventDefault();
   }
 
   return (

@@ -15,7 +15,6 @@ import fishImg from "./icons/fish.svg";
 import chickenImg from "./icons/chicken.svg";
 import beefImg from "./icons/beef.svg";
 import vegImg from "./icons/veg.svg";
-import plusImg from "./icons/plus.svg";
 import minusImg from "./icons/minus.svg";
 
 import "./RSVP.css";
