@@ -123,7 +123,7 @@ export default function RSVP() {
       }}
       exit={{ opacity: 0 }}>
       <h1>RSVP</h1>
-      <p>
+      <p className="desc">
         Let us know if we'll see you there! To add additional names, press the
         '+' button
       </p>
@@ -132,49 +132,56 @@ export default function RSVP() {
           Name(s):
         </label>
         <div className="names">
-          {formData.guests?.map((guest, i) => {
-            return (
-              <div className="name-row">
-                <input
-                  type="text"
-                  name="names"
-                  id={`name-${i}`}
-                  value={guest.name}
-                  required
-                  onChange={handleFormChange}
-                />
-                <label htmlFor={`food-${i}`}>
-                  <img className="icon" src={foodIconSwitcher(guest.food)} alt="Plate Icon" />
-                </label>
-                <select
-                  id={`food-${i}`}
-                  name="foods"
-                  required
-                  value={guest.food}
-                  onChange={handleFormChange}>
-                    <option value="" disabled>Select a food</option>
-                  <option value="chicken">
-                    Chicken
-                  </option>
-                  <option value="beef">Beef</option>
-                  <option value="seafood">Seafood</option>
-                  <option value="veg">Vegetarian</option>
-                </select>
-                {i === 0 ? (
-                  <button className="add" onClick={additionalNames}>
-                    <img className="icon" src={plusImg} alt="Plus Icon" />
-                  </button>
-                ) : (
-                  <button
-                    className="remove"
-                    id={`namebtn-${i}`}
-                    onClick={removeName}>
-                    <img className="icon" src={minusImg} alt="Minus Icon" />
-                  </button>
-                )}
-              </div>
-            );
-          })}
+          <div className="names-input">
+            {formData.guests?.map((guest, i) => {
+              return (
+                <div className="name-row">
+                  <input
+                    type="text"
+                    name="names"
+                    id={`name-${i}`}
+                    value={guest.name}
+                    required
+                    onChange={handleFormChange}
+                  />
+                  <label htmlFor={`food-${i}`}>
+                    <img
+                      className="icon"
+                      src={foodIconSwitcher(guest.food)}
+                      alt="Plate Icon"
+                    />
+                  </label>
+                  <select
+                    id={`food-${i}`}
+                    name="foods"
+                    required
+                    value={guest.food}
+                    onChange={handleFormChange}>
+                    <option value="" disabled>
+                      Select a food
+                    </option>
+                    <option value="chicken">Chicken</option>
+                    <option value="beef">Beef</option>
+                    <option value="seafood">Seafood</option>
+                    <option value="veg">Vegetarian</option>
+                  </select>
+                  {i === 0 ? (
+                    <></>
+                  ) : (
+                    <button
+                      className="remove"
+                      id={`namebtn-${i}`}
+                      onClick={removeName}>
+                      <img className="icon" src={minusImg} alt="Minus Icon" />
+                    </button>
+                  )}
+                </div>
+              );
+            })}
+            <button className="add" onClick={additionalNames}>
+              + Add Another Guest
+            </button>
+          </div>
         </div>
         <label htmlFor="email">
           Email:

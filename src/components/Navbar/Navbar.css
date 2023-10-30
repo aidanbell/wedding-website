@@ -42,3 +42,22 @@
 .navbar__links a.active {
   color: #b67772
 }
+
+.navbar__links a.disabled {
+  color: #a2b6b7;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .navbar__links {
+    flex-direction: column;
+  }
+  .navbar__links a {
+    border-right: none;
+    border-bottom: 1px solid #000;
+    padding: 10px 0;
+  }
+  .navbar__links a:last-child {
+    border-bottom: none;
+  }
+}

@@ -74,12 +74,16 @@ textarea {
   margin-right: 0.5em;
 }
 
-.name-row button {
+.names-input button {
   margin-left: 0.5em;
   border: none;
   background: none;
 }
 
+button.add {
+  margin-left: auto;
+  font-size: 1.1em;
+}
 
 .rsvp-form label {
   font-size: 1.2rem;
@@ -131,8 +135,16 @@ textarea {
   width: 30px;
 }
 
+p.desc {
+  font-size: 1rem;
+  font-style: italic;
+  opacity: 0.8;
+  text-align: center;
+}
+
 @media (max-width: 768px) {
   .rsvp-form {
+    font-size: 1.2em;
     grid-template-columns: 1fr;
     grid-template-areas: 
       "name-label"
@@ -150,5 +162,15 @@ textarea {
       "message-label"
       "message"
       "submit";
+  }
+  .rsvp-form input[type="submit"] {
+    grid-area: submit;
+  }
+  .name-row input{
+    flex-grow: 1;
+    width: 80%;
+  }
+  .name-row {
+    flex-wrap: wrap;
   }
 }

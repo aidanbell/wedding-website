@@ -4,6 +4,9 @@ import {NavLink, Link} from "react-router-dom";
 import "./Navbar.css"
 
 export default function Navbar() {
+  function disable(e) {
+    e.preventDefault();
+  }
 
   return (
     <nav className="navbar">
@@ -28,10 +31,14 @@ export default function Navbar() {
           y: [-100, 0],
         }}>
         <NavLink to="/">Home</NavLink>
-        <NavLink to="/rsvp">RSVP</NavLink>
-        <NavLink to="/registry">Registry</NavLink>
         <NavLink to="/lodging">Lodging</NavLink>
         <NavLink to="/faqs">FAQs</NavLink>
+        <NavLink onClick={disable} className="disabled"  to="/rsvp">
+          RSVP (Coming Soon)
+        </NavLink>
+        <NavLink onClick={disable} className="disabled" to="/registry">
+          Registry (Coming Soon)
+        </NavLink>
       </motion.div>
     </nav>
   );

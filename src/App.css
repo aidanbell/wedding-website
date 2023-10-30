@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Allura&family=Amatic+SC:wght@700&family=Great+Vibes&display=swap');
 
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
 /* color vars */
 :root {
   --pale-blue: #a2b6b7;
@@ -18,16 +25,14 @@
 }
 
 #root {
-  min-width: 100vw;
+  /* min-width: 100vw;
   width: 100%;
-  text-align: center;
+  text-align: center; */
 
 }
 
 main {
   width: 80%;
-  /* height: 100vh;
-  min-height: 100vh; */
   margin: 0 auto;
   border: 1px solid grey;
   background-color: rgba(219, 219, 219, 0.92);
@@ -37,7 +42,7 @@ main {
   body {
     margin: 0;
     display: flex;
-    min-width: 800px;
+    width: 100vw;
   }
   main {
     width: 90%;
