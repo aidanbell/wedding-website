@@ -1,0 +1,17 @@
+.faq__container {
+  margin: 0 auto;
+  width: 80%;
+}
+
+.faq__question p {
+  margin-bottom: 0.5em;
+  border-left: 2px solid var(--dork-green);
+  padding: 1em;
+}
+
+@media (min-width: 768px) {
+  .faq__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
