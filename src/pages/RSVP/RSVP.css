@@ -7,28 +7,31 @@ textarea {
 }
 
 .rsvp-form {
-  margin: 1em;
+  margin: 2em;
   display: grid;
   max-width: 100%;
-  grid-template-columns: 30% auto;
+  grid-template-columns: 1fr;
   grid-template-areas: 
-    "name-label name"
-    "email-label email"
-    "attending-label attending"
-    "food-label food"
-    "dietary-label dietary"
-    "accessibility-label accessibility"
-    "message-label message"
-    "submit submit";
+    "name-label"
+    "name"
+    "email-label"
+    "email"
+    "attending-label"
+    "attending"
+    "food-label"
+    "food"
+    "dietary-label"
+    "dietary"
+    "accessibility-label"
+    "accessibility"
+    "message-label"
+    "message"
+    "submit";
 }
 
 .small {
   font-size: 0.8rem;
   opacity: 0.8;
-}
-
-.rsvp-form > * {
-  margin: 1em 0;
 }
 
 .rsvp-form div.name {
@@ -59,14 +62,16 @@ textarea {
 .rsvp-form div.rsvp {
   grid-area: attending;
 }
+
 .name-row {
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-wrap: wrap;
 }
 
 .name-row select {
   padding: 0.5em;
+  height: 3em;
+  margin: auto 0;
 }
 
 .name-row input {
@@ -82,7 +87,14 @@ textarea {
 
 button.add {
   margin-left: auto;
-  font-size: 1.1em;
+  font-size: 1em;
+  color: var(--dork-green)
+}
+
+.add-btn-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .rsvp-form label {
@@ -114,8 +126,8 @@ button.add {
 
 .rsvp-form input[type="submit"] {
   grid-area: submit;
-  background-color: var(--blueish);
-  color: var(--pink);
+  background-color: var(--dork-green);
+  color: white;
   font-size: 1.2rem;
   font-weight: 600;
   padding: 0.5em;
@@ -130,9 +142,12 @@ button.add {
   align-items: center;
 }
 
-.rsvp-form input[type="radio" i] {
-  height: 30px;
-  width: 30px;
+label[for="yes"] {
+  width: 40%;
+}
+
+label[for="no"] {
+  width: 55%;
 }
 
 p.desc {
@@ -140,37 +155,68 @@ p.desc {
   font-style: italic;
   opacity: 0.8;
   text-align: center;
+  margin: 0 1em;
 }
 
-@media (max-width: 768px) {
+input[type="radio"] {
+  /* Add if not using autoprefixer */
+  -webkit-appearance: none;
+  appearance: none;
+  /* For iOS < 15 to remove gradient background */
+  background-color: #fff;
+  /* Not removed via appearance */
+  margin: 0.2em;
+  font: inherit;
+  color: currentColor;
+  border: 0.1em solid currentColor;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+}
+
+input[type="radio"]:focus {
+  outline: none;
+  border: none;
+  box-shadow: 0 0 0 0.1em var(--pink);
+}
+
+input[type="radio"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--dork-green);
+}
+
+input[type="radio"]:checked::before {
+  transform: scale(2);
+}
+
+@media (min-width: 768px) {
   .rsvp-form {
     font-size: 1.2em;
-    grid-template-columns: 1fr;
+    margin: 3em;
+    grid-template-columns: 30% auto;
     grid-template-areas: 
-      "name-label"
-      "name"
-      "email-label"
-      "email"
-      "attending-label"
-      "attending"
-      "food-label"
-      "food"
-      "dietary-label"
-      "dietary"
-      "accessibility-label"
-      "accessibility"
-      "message-label"
-      "message"
-      "submit";
-  }
-  .rsvp-form input[type="submit"] {
-    grid-area: submit;
+      "name-label name"
+      "email-label email"
+      "attending-label attending"
+      "food-label food"
+      "dietary-label dietary"
+      "accessibility-label accessibility"
+      "message-label message"
+      "submit submit";
   }
   .name-row input{
     flex-grow: 1;
     width: 80%;
   }
   .name-row {
-    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
   }
 }

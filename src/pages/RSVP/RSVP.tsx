@@ -123,8 +123,9 @@ export default function RSVP() {
       exit={{ opacity: 0 }}>
       <h1>RSVP</h1>
       <p className="desc">
-        Let us know if we'll see you there! To add additional names, press the
-        '+' button
+        Let us know if we'll see you there! Add one name and food selection per
+        guest. If you have any dietary restrictions or accessibility needs,
+        please let us know in the appropriate fields below.
       </p>
       <form className="rsvp-form" onSubmit={handleSubmit}>
         <label className="names" htmlFor="name">
@@ -177,9 +178,11 @@ export default function RSVP() {
                 </div>
               );
             })}
-            <button className="add" onClick={additionalNames}>
-              + Add Another Guest
-            </button>
+            <div className="add-btn-container">
+              <button className="add" onClick={additionalNames}>
+                + Add Another Guest
+              </button>
+            </div>
           </div>
         </div>
         <label htmlFor="email">

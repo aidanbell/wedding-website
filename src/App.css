@@ -25,6 +25,7 @@ html, body, .root {
 
 main {
   width: 80%;
+  min-height: 100vh;
   margin: 0 auto;
   border: 1px solid grey;
   background-color: rgba(219, 219, 219, 0.92);
