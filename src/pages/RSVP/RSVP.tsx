@@ -158,7 +158,7 @@ export default function RSVP() {
                     value={guest.food}
                     onChange={handleFormChange}>
                     <option value="" disabled>
-                      Select a food
+                      What's for dinner?
                     </option>
                     <option value="chicken">Chicken</option>
                     <option value="beef">Beef</option>
