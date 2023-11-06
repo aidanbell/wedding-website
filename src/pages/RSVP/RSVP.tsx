@@ -97,7 +97,7 @@ export default function RSVP() {
       {
         headers: {
           "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*",
+          "mode": "no-cors"
         },
         method: "POST",
         body: JSON.stringify({...formData, id: Math.floor(Date.now() /10000).toString()}),
