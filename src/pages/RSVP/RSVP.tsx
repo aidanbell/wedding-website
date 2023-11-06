@@ -20,9 +20,7 @@ import minusImg from "./icons/minus.svg";
 import "./RSVP.css";
 
 interface RSVPFormData {
-  name: string;
   guests?: RSVPFormGuests[];
-  food: string;
   email: string;
   rsvp: boolean;
   dietaryRestrictions: string;
@@ -37,9 +35,7 @@ interface RSVPFormGuests {
 
 export default function RSVP() {
   const [formData, setFormData] = useState<RSVPFormData>({
-    name: "",
     guests: [{ name: "", food: "" }],
-    food: "",
     email: "",
     rsvp: true,
     dietaryRestrictions: "",
@@ -58,7 +54,9 @@ export default function RSVP() {
   function removeName(event: any) {
     event.preventDefault();
     const nameIndex = event.target.id.split("-")[1];
+    console.log(event.target)
     const newNames = [...(formData.guests || [])];
+    console.log(newNames[nameIndex])
     newNames.splice(nameIndex, 1);
     setFormData({ ...formData, guests: newNames });
   }
@@ -93,11 +91,22 @@ export default function RSVP() {
 
   function handleSubmit(event: any) {
     event.preventDefault();
-    console.log(formData);
+    console.log(JSON.stringify(formData));
+    const response = fetch(
+      "https://1v2l1f3bf5.execute-api.us-east-2.amazonaws.com/rsvp",
+      {
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+        },
+        method: "POST",
+        body: JSON.stringify({...formData, id: Math.floor(Date.now() /10000).toString()}),
+      }
+    ).then(res => res.json())
+    console.log(response);
   }
 
   function foodIconSwitcher(food: string) {
-    console.log(food)
     switch (food) {
       case "chicken":
         return chickenImg;
@@ -168,11 +177,13 @@ export default function RSVP() {
                   {i === 0 ? (
                     <></>
                   ) : (
-                    <button
-                      className="remove"
-                      id={`namebtn-${i}`}
-                      onClick={removeName}>
-                      <img className="icon" src={minusImg} alt="Minus Icon" />
+                    <button className="remove" onClick={removeName}>
+                      <img
+                        className="icon"
+                        id={`namebtn-${i}`}
+                        src={minusImg}
+                        alt="Minus Icon"
+                      />
                     </button>
                   )}
                 </div>
