@@ -34,11 +34,9 @@ export default function Navbar() {
         }}>
         <NavLink to="/">Home</NavLink>
         <NavLink to="/faqs">FAQs</NavLink>
+        <NavLink to="/rsvp">RSVP</NavLink>
         <NavLink onClick={disable} className="disabled" to="/lodging">
           Lodging (Coming Soon)
-        </NavLink>
-        <NavLink onClick={disable} className="disabled" to="/rsvp">
-          RSVP (Coming Soon)
         </NavLink>
         <NavLink onClick={disable} className="disabled" to="/registry">
           Registry (Coming Soon)

@@ -1,0 +1,27 @@
+.rsvp-info {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 1em;
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 80%;
+}
+
+.rsvp-info ul {
+  text-transform:capitalize;
+  list-style: none;
+}
+
+
+.left {
+  text-align: right;
+  padding-right: 1em;
+}
+
+@media (min-width: 768px) {
+  .rsvp-info {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    width: 60%;
+  }
+}
