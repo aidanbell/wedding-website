@@ -2,12 +2,11 @@ import { useState } from 'react';
 import { RSVPFormData } from "../../types.m";
 
 import "./RSVPSubmitted.css"
-import RSVP from '../../pages/RSVP/RSVP';
 import { RSVPInfoCard } from '../RSVPInfoCard/RSVPInfoCard';
 
 export function RSVPSubmitted({ data }: { data: RSVPFormData }) {
   const [email, setEmail] = useState("");
-  const [responseData, setResponseData] = useState({});
+  // const [responseData, setResponseData] = useState({});
 
   function handleChange(event: any) {
     event.preventDefault();

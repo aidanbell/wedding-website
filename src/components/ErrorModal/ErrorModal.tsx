@@ -1,4 +1,3 @@
-import React from 'react';
 import './ErrorModal.css';
 
 type ErrorModalProps = {
@@ -6,7 +5,7 @@ type ErrorModalProps = {
   errorMessage: string;
   onClose: () => void;
 };
-export default function ErrorModal({isOpen, errorMessage, onClose}: ErrorModalProps) {
+export default function ErrorModal({errorMessage, onClose}: ErrorModalProps) {
   return (
     <div className="modal" onClick={onClose}>
       <div className="modal-content">
